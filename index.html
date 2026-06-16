@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompted — Android Beta</title>
+  <meta name="description" content="Private Android beta of Prompted. Download the APK and install on BlueStacks or your phone." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    :root {
+      --bg: #0a0a0a; --bg2: #111; --bg3: #1a1a1a; --border: #2a2a2a;
+      --text: #f0f0f0; --muted: #888; --teal: #4ECDC4; --gold: #C9A227;
+      --coral: #D97757; --green: #10A37F;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Space Grotesk', sans-serif; background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(78,205,196,0.08), transparent 60%), var(--bg);
+      color: var(--text); line-height: 1.65; font-size: 15px; min-height: 100vh; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 100px; }
+    .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 36px; }
+    .logo-badge { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--teal), var(--green));
+      display: grid; place-items: center; font-weight: 700; font-size: 22px; color: #06231f; box-shadow: 0 6px 20px rgba(78,205,196,0.25); }
+    .logo-word { font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
+    .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 12px; }
+    h1 { font-size: 40px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.08; margin-bottom: 16px; }
+    .lead { font-size: 17px; color: #bdbdbd; max-width: 600px; margin-bottom: 12px; }
+    .pill { display: inline-block; padding: 3px 11px; border-radius: 100px; font-size: 11px; font-weight: 600; background: rgba(217,119,87,0.15); color: var(--coral); margin-bottom: 28px; }
+
+    .download { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 30px 0 8px; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--teal), var(--green)); color: #052b25; font-weight: 700; font-size: 17px;
+      padding: 16px 28px; border-radius: 14px; box-shadow: 0 10px 30px rgba(78,205,196,0.30); transition: transform .12s ease, box-shadow .12s ease; }
+    .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(78,205,196,0.40); }
+    .dl-btn svg { width: 22px; height: 22px; }
+    .dl-meta { font-size: 12.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+    h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin: 52px 0 8px; }
+    h3 { font-size: 14px; font-weight: 600; color: var(--gold); margin: 24px 0 10px; text-transform: uppercase; letter-spacing: 1px; }
+    p { color: #c8c8c8; margin-bottom: 14px; }
+    ol, ul { margin: 0 0 18px 4px; color: #c8c8c8; list-style: none; counter-reset: step; }
+    ol li { position: relative; padding: 0 0 16px 44px; counter-increment: step; }
+    ol li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 28px; height: 28px;
+      border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); color: var(--teal);
+      font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 13px; display: grid; place-items: center; }
+    ul li { position: relative; padding: 0 0 9px 22px; }
+    ul li::before { content: '→'; position: absolute; left: 0; color: var(--teal); }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 5px; padding: 1px 6px; color: var(--teal); }
+    .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px; margin: 18px 0; }
+    .alert { border-radius: 10px; padding: 14px 18px; margin: 18px 0; font-size: 13.5px; border-left: 3px solid; }
+    .alert-warn { background: rgba(217,119,87,0.08); border-color: var(--coral); color: #e0a48b; }
+    .alert-info { background: rgba(71,150,227,0.08); border-color: #4796E3; color: #7ab8ec; }
+    .tabs { display: flex; gap: 8px; margin: 22px 0 4px; flex-wrap: wrap; }
+    .tab { padding: 8px 16px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border);
+      color: var(--muted); font-weight: 600; font-size: 13px; cursor: pointer; transition: all .12s ease; user-select: none; }
+    .tab.active { background: rgba(78,205,196,0.12); border-color: var(--teal); color: var(--teal); }
+    .panel { display: none; } .panel.active { display: block; }
+    footer { margin-top: 70px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12.5px; }
+    a.inline { color: var(--teal); }
+  </style>
+</head>
+<body>
+<main>
+  <div class="logo-row">
+    <div class="logo-badge">P</div>
+    <div class="logo-word">Prompted</div>
+  </div>
+
+  <div class="eyebrow">Android · Private Beta</div>
+  <h1>Try the Prompted Android app</h1>
+  <p class="lead">See what tools people are using, the prompts that actually get results, and how to apply AI to your own work — now in your pocket. Updated daily by the community.</p>
+  <span class="pill">● Beta build · for invited testers</span>
+
+  <div class="download">
+    <a class="dl-btn" href="Prompted-beta.apk" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      Download APK
+    </a>
+    <span class="dl-meta">Prompted-beta.apk · ~6.4&nbsp;MB · v1.0</span>
+  </div>
+
+  <h2>How to install</h2>
+  <div class="tabs">
+    <div class="tab active" data-tab="bluestacks">💻 BlueStacks (PC)</div>
+    <div class="tab" data-tab="phone">📱 Android phone</div>
+  </div>
+
+  <div class="panel active" id="bluestacks">
+    <div class="card">
+      <ol>
+        <li>Click <strong>Download APK</strong> above and save <code>Prompted-beta.apk</code> somewhere easy, like your Desktop.</li>
+        <li>Open <strong>BlueStacks</strong>.</li>
+        <li>Drag the <code>Prompted-beta.apk</code> file straight onto the BlueStacks window — it installs automatically. <br/><span style="color:var(--muted);font-size:13px;">(Or use the <strong>Install APK</strong> button in the BlueStacks side toolbar and pick the file.)</span></li>
+        <li>Once it finishes, find the <strong>Prompted</strong> icon on the BlueStacks home screen and open it.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="panel" id="phone">
+    <div class="card">
+      <ol>
+        <li>On your phone, open this page and tap <strong>Download APK</strong>.</li>
+        <li>When prompted, allow your browser to <strong>install unknown apps</strong> (Android will walk you through this the first time).</li>
+        <li>Open the downloaded <code>Prompted-beta.apk</code> from your notifications or Files app and tap <strong>Install</strong>.</li>
+        <li>Open <strong>Prompted</strong> from your app drawer.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <strong>"Unknown sources" / Play Protect warning is expected.</strong> This is a beta build installed outside the Play Store, so Android (and BlueStacks) will warn you before installing. That's normal for testing — tap <em>Install anyway</em> / <em>More info → Install</em>.
+  </div>
+
+  <h2>Good to know</h2>
+  <ul>
+    <li><strong>Sign in</strong> with Google, GitHub, or email — same account as the website.</li>
+    <li><strong>Swipe right</strong> to open the tabs sidebar, <strong>swipe left</strong> for notifications, daily reward, and the daily Builds / Discussions / Questions.</li>
+    <li><strong>Pro</strong> is purchased on the website (<code>prmpted.com</code>), not inside the app. Your Pro status carries over once you're signed in.</li>
+    <li>This is a <strong>debug/beta build</strong> — expect rough edges. Please send any bugs or feedback back to me.</li>
+  </ul>
+
+  <div class="alert alert-info">
+    Updates are manual during beta: when a new version drops, download the new APK from this page and install it over the old one (your data stays in your account).
+  </div>
+
+  <footer>
+    Prompted — Android private beta · Built with Capacitor · Not affiliated with Google Play.<br/>
+    Questions? Reach out to the person who shared this link with you.
+  </footer>
+</main>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+      t.classList.add('active');
+      document.getElementById(t.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

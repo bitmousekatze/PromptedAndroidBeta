@@ -1,0 +1,60 @@
+# Prompted — Android Beta
+
+Private beta distribution for the **Prompted** Android app.
+
+> **Prompted** — see what tools people are using, the prompts that actually get
+> results, and how to apply AI to your own work. Updated daily by the community.
+
+This repo hosts the install page and the latest beta `.apk` for invited testers.
+
+## 📥 Download & install
+
+**→ [Open the install page](https://bitmousekatze.github.io/PromptedAndroidBeta/)**
+
+The page has a one-click download button plus step-by-step instructions for
+**BlueStacks (PC)** and **Android phones**.
+
+Prefer the direct file? Grab **[`Prompted-beta.apk`](Prompted-beta.apk)** from this repo.
+
+### Quick steps
+
+**BlueStacks (PC)**
+1. Download `Prompted-beta.apk`.
+2. Drag the file onto the BlueStacks window (or use the **Install APK** button).
+3. Open **Prompted** from the BlueStacks home screen.
+
+**Android phone**
+1. Download `Prompted-beta.apk` from the install page.
+2. Allow your browser to *install unknown apps* when prompted.
+3. Open the file and tap **Install**.
+
+A "Play Protect / unknown sources" warning is expected for a beta build
+installed outside the Play Store — tap *Install anyway*.
+
+## ℹ️ Notes
+
+- **Debug/beta build** — expect rough edges; please report bugs.
+- **Sign in** with Google, GitHub, or email (same account as the website).
+- **Pro** is purchased on the website (`prmpted.com`), not in the app — Play
+  Store policy. Pro status carries over once you're signed in.
+- Updates are manual during beta: download the newer APK here and install over
+  the old one. Your data lives in your account, so nothing is lost.
+
+## 🔧 For maintainers
+
+The APK is a debug build of the [Prompted](https://github.com/jackherzlich-ops/Prompted)
+Capacitor Android project (`appId com.prmpted.app`):
+
+```bash
+# in the prompted repo
+npm run android:sync
+cd android && ./gradlew assembleDebug
+# output: android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+Copy that file here as `Prompted-beta.apk`, bump the version note in
+`index.html`, then commit and push.
+
+---
+
+*Private beta · not affiliated with Google Play.*
