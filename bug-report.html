@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompted Beta — Report a Bug</title>
+  <meta name="description" content="Found a bug in the Prompted Android beta? Send a report." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    :root {
+      --bg: #0a0a0a; --bg2: #111; --bg3: #1a1a1a; --border: #2a2a2a;
+      --text: #f0f0f0; --muted: #888; --teal: #4ECDC4; --gold: #C9A227;
+      --coral: #D97757; --green: #10A37F;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Space Grotesk', sans-serif; background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(78,205,196,0.08), transparent 60%), var(--bg);
+      color: var(--text); line-height: 1.6; font-size: 15px; min-height: 100vh; }
+    main { max-width: 620px; margin: 0 auto; padding: 52px 24px 100px; }
+    .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .logo-badge { width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, var(--teal), var(--green));
+      display: grid; place-items: center; font-weight: 700; font-size: 20px; color: #06231f; box-shadow: 0 6px 20px rgba(78,205,196,0.25); }
+    .logo-word { font-weight: 700; font-size: 18px; letter-spacing: -0.5px; }
+    .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--coral); margin-bottom: 12px; }
+    h1 { font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .lead { font-size: 15.5px; color: #bdbdbd; margin-bottom: 30px; }
+    a.inline { color: var(--teal); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
+
+    form { display: flex; flex-direction: column; gap: 20px; }
+    label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    label .opt { color: var(--muted); font-weight: 400; }
+    .req { color: var(--coral); }
+    input, select, textarea { width: 100%; font-family: inherit; font-size: 15px; color: var(--text);
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 11px; padding: 13px 15px; transition: border-color .12s ease, box-shadow .12s ease; }
+    input::placeholder, textarea::placeholder { color: #5c5c5c; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(78,205,196,0.12); }
+    textarea { resize: vertical; min-height: 150px; line-height: 1.55; }
+    select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+      background-repeat: no-repeat; background-position: right 15px center; padding-right: 42px; cursor: pointer; }
+
+    .submit-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: none; cursor: pointer;
+      background: linear-gradient(135deg, var(--teal), var(--green)); color: #052b25; font-weight: 700; font-size: 16px; font-family: inherit;
+      padding: 15px 24px; border-radius: 13px; box-shadow: 0 10px 30px rgba(78,205,196,0.28); transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease; }
+    .submit-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(78,205,196,0.38); }
+    .submit-btn:disabled { opacity: .6; cursor: default; }
+
+    .status { font-size: 14px; padding: 14px 18px; border-radius: 11px; border-left: 3px solid; display: none; }
+    .status.show { display: block; }
+    .status.ok { background: rgba(16,163,127,0.1); border-color: var(--green); color: #6fd9bf; }
+    .status.err { background: rgba(217,119,87,0.1); border-color: var(--coral); color: #e0a48b; }
+
+    .success-card { display: none; text-align: center; padding: 40px 28px; background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; }
+    .success-card.show { display: block; }
+    .success-card .check { width: 60px; height: 60px; margin: 0 auto 18px; border-radius: 50%; background: rgba(16,163,127,0.15);
+      display: grid; place-items: center; }
+    .success-card .check svg { width: 30px; height: 30px; stroke: var(--green); }
+    .success-card h2 { font-size: 22px; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .success-card p { color: #bdbdbd; font-size: 14.5px; }
+    .success-card button { margin-top: 20px; background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+      font-family: inherit; font-weight: 600; font-size: 14px; padding: 11px 20px; border-radius: 10px; cursor: pointer; }
+
+    .config-warn { background: rgba(201,162,39,0.1); border: 1px solid var(--gold); color: #e6cd7e; font-size: 13px;
+      padding: 13px 16px; border-radius: 11px; margin-bottom: 24px; }
+    .config-warn code { font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.3); padding: 1px 6px; border-radius: 4px; }
+
+    footer { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12.5px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="logo-row">
+    <div class="logo-badge">P</div>
+    <div class="logo-word">Prompted</div>
+  </div>
+
+  <div class="eyebrow">Android Beta · Bug Report</div>
+  <h1>Found something broken?</h1>
+  <p class="lead">Tell me what happened and I'll get it fixed. The more detail the better — what you tapped, what you expected, and what actually happened. ← <a class="inline" href="./">Back to install page</a></p>
+
+  <!-- If you see this, the form isn't wired up yet — paste your Formspree endpoint
+       into FORMSPREE_ENDPOINT in the <script> at the bottom of this file. -->
+  <div class="config-warn" id="configWarn" style="display:none;">
+    ⚠ This form isn't connected yet. Set <code>FORMSPREE_ENDPOINT</code> in the page source.
+  </div>
+
+  <form id="bugForm">
+    <div>
+      <label for="message">What went wrong? <span class="req">*</span></label>
+      <textarea id="message" name="message" required placeholder="e.g. I tapped the daily reward button and the app froze on a white screen. I was on the For You feed right before."></textarea>
+    </div>
+
+    <div>
+      <label for="area">Where in the app? <span class="opt">(optional)</span></label>
+      <select id="area" name="area">
+        <option value="">— pick one —</option>
+        <option>Home feed / scrolling</option>
+        <option>Videos / shorts</option>
+        <option>Sidebar / swipe drawers</option>
+        <option>Sign in / account</option>
+        <option>Creating a post</option>
+        <option>Notifications / daily reward</option>
+        <option>Pro / upgrade</option>
+        <option>App crashed or wouldn't open</option>
+        <option>Something else</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="email">Your email <span class="opt">(optional — so I can follow up)</span></label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" />
+    </div>
+
+    <!-- auto-filled to help debugging; testers don't touch these -->
+    <input type="hidden" id="device" name="device" />
+    <input type="hidden" name="_subject" value="🐞 Prompted beta bug report" />
+
+    <div class="status" id="status"></div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      Send report
+    </button>
+  </form>
+
+  <div class="success-card" id="successCard">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h2>Report sent — thank you!</h2>
+    <p>Got it. Thanks for helping make Prompted better. I'll take a look.</p>
+    <button id="resetBtn">Send another</button>
+  </div>
+
+  <footer>
+    Prompted — Android private beta · Your report goes straight to the maintainer.
+  </footer>
+</main>
+
+<script>
+  // ┌─────────────────────────────────────────────────────────────────────┐
+  // │ PASTE YOUR FORMSPREE ENDPOINT HERE.                                  │
+  // │ Get it from formspree.io → your form → it looks like the line below. │
+  // │ Example: 'https://formspree.io/f/abcdwxyz'                           │
+  // └─────────────────────────────────────────────────────────────────────┘
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/meewdvoy';
+
+  var form = document.getElementById('bugForm');
+  var statusEl = document.getElementById('status');
+  var btn = document.getElementById('submitBtn');
+  var successCard = document.getElementById('successCard');
+
+  // Capture device/browser info to help reproduce the bug.
+  document.getElementById('device').value =
+    navigator.userAgent + ' | screen ' + window.screen.width + 'x' + window.screen.height +
+    ' | lang ' + navigator.language;
+
+  var notConfigured = FORMSPREE_ENDPOINT.indexOf('REPLACE_WITH_YOUR_FORM_ID') !== -1;
+  if (notConfigured) document.getElementById('configWarn').style.display = 'block';
+
+  function showStatus(msg, kind) {
+    statusEl.textContent = msg;
+    statusEl.className = 'status show ' + kind;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (notConfigured) {
+      showStatus('Form not connected yet — the Formspree endpoint still needs to be set.', 'err');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          statusEl.className = 'status';
+          successCard.classList.add('show');
+        } else {
+          return res.json().then(function (data) {
+            var msg = (data && data.errors)
+              ? data.errors.map(function (x) { return x.message; }).join(', ')
+              : 'Something went wrong sending your report.';
+            throw new Error(msg);
+          });
+        }
+      })
+      .catch(function (err) {
+        showStatus(err.message + ' You can also email the report instead.', 'err');
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Send report';
+      });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    form.reset();
+    document.getElementById('device').value =
+      navigator.userAgent + ' | screen ' + window.screen.width + 'x' + window.screen.height +
+      ' | lang ' + navigator.language;
+    successCard.classList.remove('show');
+    form.style.display = 'flex';
+  });
+</script>
+</body>
+</html>

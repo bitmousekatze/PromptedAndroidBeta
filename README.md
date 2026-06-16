@@ -16,6 +16,13 @@ The page has a one-click download button plus step-by-step instructions for
 
 Prefer the direct file? Grab **[`Prompted-beta.apk`](Prompted-beta.apk)** from this repo.
 
+## 🐞 Found a bug?
+
+Use the **[bug report page](https://bitmousekatze.github.io/PromptedAndroidBeta/bug-report.html)**
+— a quick form that sends the report (plus device info) straight to the
+maintainer via Formspree. There's also a **Report a bug** button on the install
+page.
+
 ### Quick steps
 
 **BlueStacks (PC)**
