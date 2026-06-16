@@ -7,6 +7,14 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
+### Latest build — Jun 17, 2026
+
+Fixes from the first round of testing: smoother swipe drawers (horizontal
+scrollers and the composer no longer trigger them), no blue tap-flash, hidden
+Android system nav bar, share & report moved to each post's top-right, the
+Videos tab no longer clips at the bottom, and a new **chat bubble color &
+background** picker in Messages (apply for all chats or just one).
+
 ## 📥 Download & install
 
 **→ [Open the install page](https://bitmousekatze.github.io/PromptedAndroidBeta/)**
