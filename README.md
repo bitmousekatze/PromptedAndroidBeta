@@ -40,6 +40,29 @@ installed outside the Play Store — tap *Install anyway*.
 - Updates are manual during beta: download the newer APK here and install over
   the old one. Your data lives in your account, so nothing is lost.
 
+## 📋 Device compatibility
+
+Works on **any** Android device — real phones, tablets, and emulators like
+BlueStacks alike. BlueStacks just runs Android, so anything that installs there
+installs on a physical phone too.
+
+| Spec | Value |
+|------|-------|
+| Package | `com.prmpted.app` |
+| Version | 1.0 (versionCode 1) |
+| Build type | Debug (debug-signed, for sideloading) |
+| File size | ~6.4 MB |
+| Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
+| Target Android | 16 (API 36) |
+| CPU architectures | **All** — no restriction |
+
+Because this is a [Capacitor](https://capacitorjs.com/) WebView app, the APK
+contains no native `lib/` binaries, so it's **architecture-independent**: the
+same file runs on arm, arm64, x86, and x86_64 without separate builds.
+
+> A "Play Protect / unknown sources" warning is expected for a debug build
+> installed outside the Play Store — that's normal for beta testing.
+
 ## 🔧 For maintainers
 
 The APK is a debug build of the [Prompted](https://github.com/jackherzlich-ops/Prompted)
