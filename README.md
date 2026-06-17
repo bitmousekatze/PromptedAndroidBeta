@@ -7,13 +7,17 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jun 17, 2026
+### Latest build — Jun 17, 2026 (build 2)
 
-Fixes from the first round of testing: smoother swipe drawers (horizontal
-scrollers and the composer no longer trigger them), no blue tap-flash, hidden
-Android system nav bar, share & report moved to each post's top-right, the
-Videos tab no longer clips at the bottom, and a new **chat bubble color &
-background** picker in Messages (apply for all chats or just one).
+Second round, addressing real-device feedback: the blue tap-flash is fully gone
+(it was the focus outline), the bottom system bar (back/home/recents) is now
+hidden, the Videos tab no longer cuts off the caption, the feed can't scroll
+behind an open sidebar, the login window closes itself after sign-in, opening
+notifications marks them all read at once, and the Games tab is hidden in the app.
+
+Carried over from build 1: swipe drawers no longer triggered by horizontal
+scrollers/the composer, share & report moved to each post's top-right, and the
+**chat bubble color & background** picker in Messages (for all chats or just one).
 
 ## 📥 Download & install
 
