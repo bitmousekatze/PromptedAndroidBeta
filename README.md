@@ -85,21 +85,6 @@ same file runs on arm, arm64, x86, and x86_64 without separate builds.
 > A "Play Protect / unknown sources" warning is expected for a debug build
 > installed outside the Play Store — that's normal for beta testing.
 
-## 🔧 For maintainers
-
-The APK is a debug build of the [Prompted](https://github.com/jackherzlich-ops/Prompted)
-Capacitor Android project (`appId com.prmpted.app`):
-
-```bash
-# in the prompted repo
-npm run android:sync
-cd android && ./gradlew assembleDebug
-# output: android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-Copy that file here as `Prompted-beta.apk`, bump the version note in
-`index.html`, then commit and push.
-
 ---
 
 *Private beta · not affiliated with Google Play.*
