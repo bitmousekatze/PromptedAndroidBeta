@@ -50,6 +50,17 @@
     .alert { border-radius: 10px; padding: 14px 18px; margin: 18px 0; font-size: 13.5px; border-left: 3px solid; }
     .alert-warn { background: rgba(217,119,87,0.08); border-color: var(--coral); color: #e0a48b; }
     .alert-info { background: rgba(71,150,227,0.08); border-color: #4796E3; color: #7ab8ec; }
+    .changelog { margin: 14px 0 8px; }
+    .cl-entry { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin: 14px 0; }
+    .cl-entry.latest { border-color: rgba(78,205,196,0.45); box-shadow: 0 0 0 1px rgba(78,205,196,0.12), 0 10px 30px rgba(78,205,196,0.07); }
+    .cl-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .cl-build { font-weight: 700; font-size: 16px; letter-spacing: -0.3px; }
+    .cl-date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+    .cl-new { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 9px; border-radius: 100px; background: linear-gradient(135deg, var(--teal), var(--green)); color: #052b25; }
+    .cl-entry ul { margin: 0; }
+    .cl-entry ul li { padding: 0 0 9px 24px; color: #cfcfcf; }
+    .cl-entry ul li::before { content: '✦'; color: var(--teal); }
+    .cl-entry strong { color: var(--text); }
     .tabs { display: flex; gap: 8px; margin: 22px 0 4px; flex-wrap: wrap; }
     .tab { padding: 8px 16px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border);
       color: var(--muted); font-weight: 600; font-size: 13px; cursor: pointer; transition: all .12s ease; user-select: none; }
@@ -76,17 +87,59 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
       Download APK
     </a>
-    <span class="dl-meta">Prompted-beta.apk · ~6.4&nbsp;MB · v1.0 · Jun&nbsp;17 (build&nbsp;2)</span>
+    <span class="dl-meta">Prompted-beta.apk · ~9.7&nbsp;MB · v1.0 · Jun&nbsp;19 (build&nbsp;3)</span>
   </div>
 
-  <div class="alert alert-info">
-    <strong>What's new in build 2 (from your feedback):</strong> the blue tap-flash
-    is gone for real, the bottom system bar (back/home/recents) is hidden, the
-    Videos tab no longer cuts off the caption, the feed can't scroll behind an open
-    sidebar, the login window now closes itself after you sign in, opening
-    notifications clears them all at once, and the Games tab is hidden in the app.
-    Plus the earlier round: chat bubble color &amp; background in Messages, and
-    share/report moved to each post's top-right.
+  <h2 style="margin-top:42px;">What's new</h2>
+  <div class="changelog">
+
+    <div class="cl-entry latest">
+      <div class="cl-head">
+        <span class="cl-build">Build 3</span>
+        <span class="cl-date">Jun 19, 2026</span>
+        <span class="cl-new">Latest</span>
+      </div>
+      <ul>
+        <li>🔔 <strong>Push notifications are here.</strong> Get pinged for likes, comments, replies, @mentions and new messages — even when the app is closed.</li>
+        <li>🏷️ <strong>@mentions notify people.</strong> Tag someone with @username in a post or comment and they'll get a notification.</li>
+        <li>💬 <strong>Direct messages now push</strong> straight to your notification tray.</li>
+        <li>👥 <strong>Communities tab fixed.</strong> It now loads the full list in the app instead of showing "No communities yet."</li>
+        <li>🔑 <strong>Google &amp; GitHub login fixed.</strong> The login page no longer sticks around after you sign in.</li>
+        <li>🎚️ <strong>Arena slider fixed.</strong> Swiping across the category filters no longer yanks the sidebar open — scroll and pick freely.</li>
+        <li>◀️ <strong>Videos back button.</strong> Added a back button so you can exit the Videos view.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <div class="cl-head">
+        <span class="cl-build">Build 2</span>
+        <span class="cl-date">Jun 17, 2026</span>
+      </div>
+      <ul>
+        <li>Removed the blue tap-flash on buttons for good.</li>
+        <li>Hid the bottom system bar (back/home/recents) for a cleaner full-screen feel.</li>
+        <li>Videos tab no longer cuts off the caption.</li>
+        <li>The feed can't scroll behind an open sidebar anymore.</li>
+        <li>The login window closes itself after you sign in.</li>
+        <li>Opening notifications clears them all at once.</li>
+        <li>Chat bubble color &amp; background options in Messages.</li>
+        <li>Share / report moved to each post's top-right.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <div class="cl-head">
+        <span class="cl-build">Build 1</span>
+        <span class="cl-date">Jun 16, 2026</span>
+      </div>
+      <ul>
+        <li>First public Android beta, wrapped with Capacitor.</li>
+        <li>Sign in with Google, GitHub, or email — same account as the website.</li>
+        <li>Swipe-right for tabs, swipe-left for notifications &amp; the daily reward.</li>
+        <li>Native status bar, splash screen and Pro fixes.</li>
+      </ul>
+    </div>
+
   </div>
 
   <h2>How to install</h2>
