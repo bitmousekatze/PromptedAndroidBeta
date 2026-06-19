@@ -7,17 +7,20 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jun 17, 2026 (build 2)
+### Latest build — Jun 19, 2026 (build 3)
 
-Second round, addressing real-device feedback: the blue tap-flash is fully gone
-(it was the focus outline), the bottom system bar (back/home/recents) is now
-hidden, the Videos tab no longer cuts off the caption, the feed can't scroll
-behind an open sidebar, the login window closes itself after sign-in, opening
-notifications marks them all read at once, and the Games tab is hidden in the app.
+The soft-launch build. **Push notifications are here** — likes, comments,
+replies, @mentions and new direct messages now notify you even when the app is
+closed. Plus a round of fixes: the **Communities tab** now loads the full list
+in the app (instead of "No communities yet"), **Google/GitHub login** no longer
+leaves the login page stuck on screen after you sign in, the **Arena** category
+slider no longer yanks the sidebar open when you swipe across it, and **Videos**
+now has a back button to exit the view.
 
-Carried over from build 1: swipe drawers no longer triggered by horizontal
-scrollers/the composer, share & report moved to each post's top-right, and the
-**chat bubble color & background** picker in Messages (for all chats or just one).
+Build 2 (Jun 17): blue tap-flash fully gone, bottom system bar hidden, Videos
+caption no longer cut off, feed can't scroll behind an open sidebar, login window
+closes itself after sign-in, opening notifications marks them all read at once,
+chat bubble color & background picker in Messages.
 
 ## 📥 Download & install
 
@@ -70,7 +73,7 @@ installs on a physical phone too.
 | Package | `com.prmpted.app` |
 | Version | 1.0 (versionCode 1) |
 | Build type | Debug (debug-signed, for sideloading) |
-| File size | ~6.4 MB |
+| File size | ~9.7 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
 | Target Android | 16 (API 36) |
 | CPU architectures | **All** — no restriction |
