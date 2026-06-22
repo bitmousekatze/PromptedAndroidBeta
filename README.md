@@ -7,15 +7,17 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jun 19, 2026 (build 3)
+### Latest build — Jun 22, 2026 (build 4)
 
-The soft-launch build. **Push notifications are here** — likes, comments,
-replies, @mentions and new direct messages now notify you even when the app is
-closed. Plus a round of fixes: the **Communities tab** now loads the full list
-in the app (instead of "No communities yet"), **Google/GitHub login** no longer
-leaves the login page stuck on screen after you sign in, the **Arena** category
-slider no longer yanks the sidebar open when you swipe across it, and **Videos**
-now has a back button to exit the view.
+**Zeo livestreaming is here.** Watch live streams right inside the app, chat live,
+and like streams as they happen — and get a notification the moment someone you
+follow goes live. Also new: **Community Projects** (share your own build projects
+and grade each other's work), plus stability and performance polish across the app.
+
+Build 3 (Jun 19): push notifications for likes, comments, replies, @mentions and
+direct messages; Communities tab loads the full list in-app; Google/GitHub login
+no longer leaves the login page stuck after sign-in; Arena category slider no
+longer yanks the sidebar open; Videos got a back button.
 
 Build 2 (Jun 17): blue tap-flash fully gone, bottom system bar hidden, Videos
 caption no longer cut off, feed can't scroll behind an open sidebar, login window
@@ -73,7 +75,7 @@ installs on a physical phone too.
 | Package | `com.prmpted.app` |
 | Version | 1.0 (versionCode 1) |
 | Build type | Debug (debug-signed, for sideloading) |
-| File size | ~9.7 MB |
+| File size | ~7.2 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
 | Target Android | 16 (API 36) |
 | CPU architectures | **All** — no restriction |
