@@ -7,12 +7,19 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jun 22, 2026 (build 4)
+### Latest build — Jul 17, 2026 (build 5, v1.1)
 
-**Zeo livestreaming is here.** Watch live streams right inside the app, chat live,
-and like streams as they happen — and get a notification the moment someone you
-follow goes live. Also new: **Community Projects** (share your own build projects
-and grade each other's work), plus stability and performance polish across the app.
+**The new mobile UI is here.** The app now matches the redesigned mobile site:
+new bottom navigation with a **Notifications bell** (live unread badge), the
+**language switcher — 6 languages** (English, Español, Português, हिन्दी,
+Bahasa Indonesia, Deutsch), badge & Spotlight customization fixes, and the
+Random Posts shuffle. Plus a big bug sweep: the Android **back button** now
+closes Notifications and open editors properly, **share/copy links** and
+**password-reset emails** no longer point at a dead localhost address, and
+custom Spotlight winner icons render correctly.
+
+Build 4 (Jun 22): Zeo livestreaming (watch, chat, like live), go-live
+notifications, Community Projects, stability & performance polish.
 
 Build 3 (Jun 19): push notifications for likes, comments, replies, @mentions and
 direct messages; Communities tab loads the full list in-app; Google/GitHub login
@@ -73,9 +80,9 @@ installs on a physical phone too.
 | Spec | Value |
 |------|-------|
 | Package | `com.prmpted.app` |
-| Version | 1.0 (versionCode 1) |
+| Version | 1.1 (versionCode 2) |
 | Build type | Debug (debug-signed, for sideloading) |
-| File size | ~7.2 MB |
+| File size | ~15.1 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
 | Target Android | 16 (API 36) |
 | CPU architectures | **All** — no restriction |
