@@ -7,14 +7,16 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jul 28, 2026 (build 7, v1.2.1)
+### Latest build — Jul 28, 2026 (build 8, v1.2.2)
 
-**Status bar & quick-post fixes.** The app no longer draws under the top system
-status bar (it was covering the header/buttons, worst on BlueStacks), and
-**quick posting is now the default** — tap the "What are you sharing?" box and
-it expands right in the feed, no toggle button, matching the website. Also
-pulls in the latest site updates (swipeable curated cards, tap a profile
-picture to open that profile).
+**Status bar fix, take two.** The whole app now renders below the top system
+bar on **every** device — including BlueStacks and older Androids, where the
+build 7 fix didn't take (the framework silently ignored it there).
+
+Build 7 (Jul 28, earlier): quick posting is now the default — tap the "What
+are you sharing?" box and it expands right in the feed, no toggle button,
+matching the website. Also pulls in the latest site updates (swipeable curated
+cards, tap a profile picture to open that profile).
 
 Build 6 (Jul 28, earlier): pull-to-refresh on the feed, full-screen image close
 fixes (bigger ✕ + hardware Back), notification status-bar icon fixed (Prompted
@@ -86,7 +88,7 @@ installs on a physical phone too.
 | Spec | Value |
 |------|-------|
 | Package | `com.prmpted.app` |
-| Version | 1.2.1 (versionCode 4) |
+| Version | 1.2.2 (versionCode 5) |
 | Build type | Debug (debug-signed, for sideloading) |
 | File size | ~15.1 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
