@@ -7,16 +7,18 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jul 17, 2026 (build 5, v1.1)
+### Latest build — Jul 28, 2026 (build 6, v1.2)
 
-**The new mobile UI is here.** The app now matches the redesigned mobile site:
-new bottom navigation with a **Notifications bell** (live unread badge), the
-**language switcher — 6 languages** (English, Español, Português, हिन्दी,
-Bahasa Indonesia, Deutsch), badge & Spotlight customization fixes, and the
-Random Posts shuffle. Plus a big bug sweep: the Android **back button** now
-closes Notifications and open editors properly, **share/copy links** and
-**password-reset emails** no longer point at a dead localhost address, and
-custom Spotlight winner icons render correctly.
+**Mobile fixes test build.** Adds **pull-to-refresh** on the feed (drag down
+from the top to load new posts), fixes **closing full-screen images** (bigger ✕
+clear of the status bar, and the Back button now closes an opened picture),
+fixes the blank-square **notification icon** (now the Prompted "P"), adds
+**auto-retry for videos** that fail to load, and makes the **faster quick-post
+composer** (no "Note" button) the default in the feed.
+
+Build 5 (Jul 17): new mobile UI with a Notifications bell (live unread badge),
+6-language switcher, Android back-button fixes, share/copy & password-reset
+links fixed, badge & Spotlight customization fixes, Random Posts shuffle.
 
 Build 4 (Jun 22): Zeo livestreaming (watch, chat, like live), go-live
 notifications, Community Projects, stability & performance polish.
@@ -80,7 +82,7 @@ installs on a physical phone too.
 | Spec | Value |
 |------|-------|
 | Package | `com.prmpted.app` |
-| Version | 1.1 (versionCode 2) |
+| Version | 1.2 (versionCode 3) |
 | Build type | Debug (debug-signed, for sideloading) |
 | File size | ~15.1 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
