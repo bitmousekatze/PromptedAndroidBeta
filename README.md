@@ -7,14 +7,18 @@ Private beta distribution for the **Prompted** Android app.
 
 This repo hosts the install page and the latest beta `.apk` for invited testers.
 
-### Latest build — Jul 28, 2026 (build 6, v1.2)
+### Latest build — Jul 28, 2026 (build 7, v1.2.1)
 
-**Mobile fixes test build.** Adds **pull-to-refresh** on the feed (drag down
-from the top to load new posts), fixes **closing full-screen images** (bigger ✕
-clear of the status bar, and the Back button now closes an opened picture),
-fixes the blank-square **notification icon** (now the Prompted "P"), adds
-**auto-retry for videos** that fail to load, and makes the **faster quick-post
-composer** (no "Note" button) the default in the feed.
+**Status bar & quick-post fixes.** The app no longer draws under the top system
+status bar (it was covering the header/buttons, worst on BlueStacks), and
+**quick posting is now the default** — tap the "What are you sharing?" box and
+it expands right in the feed, no toggle button, matching the website. Also
+pulls in the latest site updates (swipeable curated cards, tap a profile
+picture to open that profile).
+
+Build 6 (Jul 28, earlier): pull-to-refresh on the feed, full-screen image close
+fixes (bigger ✕ + hardware Back), notification status-bar icon fixed (Prompted
+"P" instead of a blank square), auto-retry for videos that fail to load.
 
 Build 5 (Jul 17): new mobile UI with a Notifications bell (live unread badge),
 6-language switcher, Android back-button fixes, share/copy & password-reset
@@ -82,7 +86,7 @@ installs on a physical phone too.
 | Spec | Value |
 |------|-------|
 | Package | `com.prmpted.app` |
-| Version | 1.2 (versionCode 3) |
+| Version | 1.2.1 (versionCode 4) |
 | Build type | Debug (debug-signed, for sideloading) |
 | File size | ~15.1 MB |
 | Minimum Android | **7.0 (Nougat, API 24)** — phones from ~2016 onward |
